@@ -1,0 +1,10 @@
+{% include 'partials/header.html'%}
+<h1>Home</h1>
+{{ placeholder }}
+{% if blogs %}
+    {% for blog in blogs%}
+        <h2>{{blog.title}}</h2>
+        <p>{{blog.content}}  <a href="{% url 'post' blog.id %}">Read more...</a></p>
+    {% endfor %}
+{% endif %}
+{% include 'partials/footer.html'%}
